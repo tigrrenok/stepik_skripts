@@ -49,10 +49,6 @@ units = fetch_objects('unit', unit_ids)
 lesson_ids = [unit['lesson'] for unit in units]
 lessons = fetch_objects('lesson', lesson_ids)
 
-moduls = {section['id']: section['title'] for section in sections}
-# print(*lessons[4].items(), sep='\n')
-# print([moduls[lesson["units"]] for lesson in lessons])
-
 data = {
     "title": [lesson["title"] for lesson in lessons],
     "epic_count": [int(lesson["epic_count"]) for lesson in lessons],
